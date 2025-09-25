@@ -9,7 +9,7 @@ export const CartContext = createContext({
 });
 
 function shoppingCartReducer(state, action) {
-  if (UserActivation.type === "ADD_ITEM") {
+  if (action.type === "ADD_ITEM") {
     const updatedItems = [...state.items];
     const existingCartItemIndex = updatedItems.findIndex(
       (item) => item.id === action.payload
@@ -77,8 +77,8 @@ export default function CartContextProvider({ children }) {
   }
   const ctxValue = {
     items: shoppingCartstate.items,
-    handleAddItemToCart,
-    handleUpdateCartItemQuantity,
+    addToCart: handleAddItemToCart,
+    updateItemQuantity: handleUpdateCartItemQuantity,
   };
   return (
     <CartContext.Provider value={ctxValue}>{children}</CartContext.Provider>
