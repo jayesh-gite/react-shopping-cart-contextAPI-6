@@ -61,7 +61,7 @@ export default function CartContextProvider({ children }) {
       items: [],
     }
   );
-  console.log(shoppingCartstate);
+
   function handleAddItemToCart(id) {
     ShoppingCartDispatch({
       type: "ADD_ITEM",

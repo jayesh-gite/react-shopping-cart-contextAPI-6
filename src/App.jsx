@@ -12,6 +12,7 @@ function App() {
         {DUMMY_PRODUCTS.map((item) => (
           <li key={item.id}>
             <Product {...item} />
+            {console.log("Product Rendered" + item.title + " " + item.quantity)}
           </li>
         ))}
       </Shop>
